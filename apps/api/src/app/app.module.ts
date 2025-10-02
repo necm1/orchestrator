@@ -60,7 +60,6 @@ import { AuthModule } from '@orchestrator/api-auth';
             provide: APP_INTERCEPTOR,
             useClass: ClassSerializerInterceptor,
         },
-        AppResolver,
     ],
 })
 export class AppModule {}

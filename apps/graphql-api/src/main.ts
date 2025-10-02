@@ -4,6 +4,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 import { Logger, LoggerErrorInterceptor } from 'nestjs-pino';
 import * as bodyParser from 'body-parser';
+import { expressMiddleware } from '@as-integrations/express5';
 
 async function bootstrap() {
     const app = await NestFactory.create<NestExpressApplication>(AppModule, {
@@ -27,6 +28,7 @@ async function bootstrap() {
         })
     );
     app.use(bodyParser.urlencoded({ limit: 1e8 + 'mb', extended: true }));
+    // app.use(expressMiddleware());
 
     const port = 3002;
     await app.listen(port);
