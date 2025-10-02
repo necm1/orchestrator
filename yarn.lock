@@ -4405,6 +4405,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@orchestrator/api-orm@workspace:packages/api-orm":
+  version: 0.0.0-use.local
+  resolution: "@orchestrator/api-orm@workspace:packages/api-orm"
+  dependencies:
+    tslib: "npm:^2.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@orchestrator/api-utils@workspace:packages/api-utils":
+  version: 0.0.0-use.local
+  resolution: "@orchestrator/api-utils@workspace:packages/api-utils"
+  dependencies:
+    tslib: "npm:^2.3.0"
+  languageName: unknown
+  linkType: soft
+
 "@orchestrator/api@workspace:apps/api":
   version: 0.0.0-use.local
   resolution: "@orchestrator/api@workspace:apps/api"
@@ -4501,6 +4517,7 @@ __metadata:
     jest-util: "npm:^30.0.2"
     jiti: "npm:2.4.2"
     jsdom: "npm:~22.1.0"
+    jsonc-eslint-parser: "npm:^2.1.0"
     next: "npm:~15.2.4"
     nx: "npm:21.6.2"
     postcss: "npm:8.4.38"

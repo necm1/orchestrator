@@ -24,6 +24,12 @@
     },
     {
       "path": "./packages/flow-editor"
+    },
+    {
+      "path": "./packages/api-utils"
+    },
+    {
+      "path": "./packages/api-orm"
     }
   ],
   "exclude": [

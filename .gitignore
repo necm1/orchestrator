@@ -50,3 +50,8 @@ test-output
 out
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
+
+# Env Files
+.env*
+!.env.example
+!.env.*.example
