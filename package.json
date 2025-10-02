@@ -4,10 +4,15 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "typeorm": "TS_NODE_PROJECT=tsconfig.typeorm.json ts-node -r dotenv/config ./node_modules/typeorm/cli",
     "api:dev": "nx serve @orchestrator/api",
     "app:dev": "nx dev @orchestrator/app",
     "app:build": "nx build @orchestrator/app",
-    "ui:build": "nx run @orchestrator/ui:build"
+    "ui:build": "nx run @orchestrator/ui:build",
+    "orm:migrate": "npm run typeorm -- migration:generate ./apps/api/src/migrations/$npm_config_name -d ./packages/api-orm/src/typeorm.config.ts",
+    "orm:create": "npm run typeorm -- migration:create ./apps/api/src/migrations/$npm_config_name -- -d ./packages/api-orm/src/typeorm.config.ts",
+    "orm:run": "npm run typeorm migration:run -- -d ./packages/api-orm/src/typeorm.config.ts",
+    "orm:revert": "npm run typeorm migration:revert -- -d ./packages/api-orm/src/typeorm.config.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
@@ -59,6 +64,7 @@
     "jest-util": "^30.0.2",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
+    "jsonc-eslint-parser": "^2.1.0",
     "nx": "21.6.2",
     "postcss": "8.4.38",
     "prettier": "^2.6.2",

@@ -1,40 +1,52 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compileOnSave": false,
-  "files": [],
-  "compilerOptions": {
-    "target": "ES2018",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
-    "noImplicitAny": true,
-    "lib": ["ES7"],
-    "baseUrl": "./",
-    "outDir": "./dist",
-    "declaration": false
-  },
-  "references": [
-    {
-      "path": "./apps/api"
+    "extends": "./tsconfig.base.json",
+    "compileOnSave": false,
+    "files": [],
+    "compilerOptions": {
+        "target": "ES2018",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "noImplicitAny": true,
+        "lib": ["ES7"],
+        "baseUrl": "./",
+        "outDir": "./dist",
+        "declaration": false
     },
-    {
-      "path": "./apps/app"
+    "ts-node": {
+        "require": ["tsconfig-paths/register"]
     },
-    {
-      "path": "./packages/ui"
-    }
-  ],
-  "exclude": [
-    "dist",
-    "dist/*",
-    "**/dist",
-    "**/dist/*",
-    "node_modules",
-    "node_modules/*",
-    "**/node_modules",
-    "**/node_modules/*",
-    "tmp",
-    "tmp/*",
-    "**/tmp",
-    "**/tmp/*"
-  ]
+    "references": [
+        {
+            "path": "./apps/api"
+        },
+        {
+            "path": "./apps/app"
+        },
+        {
+            "path": "./packages/ui"
+        },
+        {
+            "path": "./packages/flow-editor"
+        },
+        {
+            "path": "./packages/api-utils"
+        },
+        {
+            "path": "./packages/api-orm"
+        }
+    ],
+    "exclude": [
+        "dist",
+        "dist/*",
+        "**/dist",
+        "**/dist/*",
+        "node_modules",
+        "node_modules/*",
+        "**/node_modules",
+        "**/node_modules/*",
+        "tmp",
+        "tmp/*",
+        "**/tmp",
+        "**/tmp/*"
+    ]
 }
