@@ -1,0 +1,26 @@
+{
+  "name": "@orchestrator/orchestrator-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@orchestrator/orchestrator"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/orchestrator-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@orchestrator/orchestrator:build",
+          "@orchestrator/orchestrator:serve"
+        ]
+      }
+    }
+  }
+}
