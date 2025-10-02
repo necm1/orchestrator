@@ -4,6 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "api:dev": "nx serve @orchestrator/api",
     "app:dev": "nx dev @orchestrator/app",
     "app:build": "nx build @orchestrator/app",
     "ui:build": "nx run @orchestrator/ui:build"
