@@ -1,29 +1,31 @@
 {
-  "compilerOptions": {
-    "composite": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "importHelpers": true,
-    "isolatedModules": true,
-    "lib": ["es2022"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2022",
-    "customConditions": ["@orchestrator/source"],
-    "strictPropertyInitialization": false,
-    "noPropertyAccessFromIndexSignature": false,
-    "baseUrl": "./",
-    "paths": {
-      "@orchestrator/app/*": ["./apps/app/src/*"],
-      "@orchestrator/flow-editor": ["packages/flow-editor/src/index.ts"],
-      "@orchestrator/ui": ["packages/ui/src/index.ts"]
-    }
-  }
+    "compilerOptions": {
+        "composite": true,
+        "declarationMap": true,
+        "emitDeclarationOnly": true,
+        "importHelpers": true,
+        "isolatedModules": true,
+        "lib": ["es2022"],
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "noEmitOnError": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": false,
+        "noUnusedLocals": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "es2022",
+        "customConditions": ["@orchestrator/source"],
+        "strictPropertyInitialization": false,
+        "noPropertyAccessFromIndexSignature": false,
+        "baseUrl": "./",
+        "paths": {
+            "@orchestrator/app/*": ["./apps/app/src/*"],
+            "@orchestrator/flow-editor": ["packages/flow-editor/src/index.ts"],
+            "@orchestrator/ui": ["packages/ui/src/index.ts"],
+            "@orchestrator/api-orm": ["packages/api-.orm/src/index.ts"]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
 }

@@ -1,1 +1,1 @@
-export * from './lib/api-orm.module';
+export { OrmModule } from './orm.module';

@@ -2,20 +2,27 @@
   "name": "@orchestrator/api-orm",
   "version": "0.0.1",
   "private": true,
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "type": "commonjs",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "@orchestrator/source": "./src/index.ts",
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
     }
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "@nestjs/typeorm": "^11.0.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "ioredis": "^5.8.0",
+    "pg": "^8.16.3",
+    "tslib": "^2.3.0",
+    "typeorm": "^0.3.27"
   },
   "nx": {
     "targets": {
@@ -35,5 +42,8 @@
         }
       }
     }
+  },
+  "devDependencies": {
+    "@types/pg": "^8"
   }
 }

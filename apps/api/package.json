@@ -64,7 +64,7 @@
         ],
         "options": {
           "buildTarget": "@orchestrator/api:build",
-          "runBuildTargetDependencies": false
+          "runBuildTargetDependencies": true
         },
         "configurations": {
           "development": {
