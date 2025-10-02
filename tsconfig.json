@@ -4,10 +4,7 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/orchestrator-e2e"
-    },
-    {
-      "path": "./apps/orchestrator"
+      "path": "./apps/api"
     }
   ]
 }

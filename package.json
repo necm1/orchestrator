@@ -40,7 +40,7 @@
     "apps/*",
     "packages/*"
   ],
-  "packageManager": "yarn@4.9.2",
+  "packageManager": "yarn@4.10.3",
   "dependencies": {
     "@nestjs/common": "^11.0.0",
     "@nestjs/core": "^11.0.0",
