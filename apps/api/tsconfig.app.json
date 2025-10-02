@@ -22,6 +22,9 @@
     ],
     "references": [
         {
+            "path": "../../packages/api-auth/tsconfig.lib.json"
+        },
+        {
             "path": "../../packages/api-orm/tsconfig.lib.json"
         }
     ]

@@ -1,1 +1,1 @@
-export { OrmUserModule } from './user';
+export { OrmUserModule, OrmUserService, User } from './user';

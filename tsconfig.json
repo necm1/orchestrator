@@ -33,6 +33,18 @@
         },
         {
             "path": "./packages/api-orm"
+        },
+        {
+            "path": "./packages/api-auth"
+        },
+        {
+            "path": "./packages/shared-gql"
+        },
+        {
+            "path": "./packages/shared"
+        },
+        {
+            "path": "./apps/graphql-api"
         }
     ],
     "exclude": [
