@@ -1,7 +1,7 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "outDir": "../../dist",
+        "outDir": "dist",
         "types": ["node"],
         "rootDir": "src",
         "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo",
@@ -21,9 +21,6 @@
         "eslint.config.mjs"
     ],
     "references": [
-        {
-            "path": "../../packages/api-auth/tsconfig.lib.json"
-        },
         {
             "path": "../../packages/api-orm/tsconfig.lib.json"
         }

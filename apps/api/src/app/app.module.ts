@@ -12,6 +12,7 @@ import { RedisClientOptions } from 'redis';
 import { ConfigModule } from '@nestjs/config';
 import { resolve } from 'path';
 import { OrmModule } from '@orchestrator/api-orm';
+import { AuthModule } from '@orchestrator/api-auth';
 
 @Module({
     imports: [
@@ -43,6 +44,7 @@ import { OrmModule } from '@orchestrator/api-orm';
             isGlobal: true,
         }),
         OrmModule,
+        AuthModule,
     ],
     controllers: [AppController],
     providers: [
@@ -58,6 +60,7 @@ import { OrmModule } from '@orchestrator/api-orm';
             provide: APP_INTERCEPTOR,
             useClass: ClassSerializerInterceptor,
         },
+        AppResolver,
     ],
 })
 export class AppModule {}
