@@ -1,20 +1,48 @@
 {
-    "name": "@orchestrator/shared",
-    "version": "0.0.1",
-    "type": "module",
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "exports": {
-        "./package.json": "./package.json",
-        ".": {
-            "@orchestrator/source": "./src/index.ts",
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.js",
-            "default": "./dist/index.js"
-        }
-    },
-    "dependencies": {
-        "@apollo/client": "^4.0.7"
+  "name": "@orchestrator/shared",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "@orchestrator/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
+  },
+  "scripts": {
+    "codegen": "graphql-codegen --config ./codegen.ts",
+    "codegen:watch": "graphql-codegen --config ./codegen.ts --watch"
+  },
+  "dependencies": {
+    "@apollo/client": "^4.0.7"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^6.0.0",
+    "@graphql-codegen/fragment-matcher": "^6.0.0",
+    "@graphql-codegen/typescript": "^5.0.1",
+    "@graphql-codegen/typescript-operations": "^5.0.1"
+  },
+  "nx": {
+    "targets": {
+      "types": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npm run codegen",
+          "cwd": "packages/shared"
+        }
+      },
+      "types:watch": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npm run codegen:watch",
+          "cwd": "packages/shared"
+        }
+      }
+    }
+  }
 }

@@ -9,5 +9,33 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "tailwindcss": "^4.1.14"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/next:build",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "dist/apps/app"
+        },
+        "configurations": {
+          "development": {},
+          "production": {}
+        }
+      },
+      "dev": {
+        "executor": "@nx/next:server",
+        "dependsOn": [
+          "@orchestrator/shared:types"
+        ],
+        "options": {
+          "buildTarget": "@orchestrator/app:build",
+          "turbo": false,
+          "experimentalHttps": false
+        }
+      }
+    }
   }
 }

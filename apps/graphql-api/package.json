@@ -6,6 +6,9 @@
     "targets": {
       "build": {
         "executor": "nx:run-commands",
+        "dependsOn": [
+          "@orchestrator/shared:types"
+        ],
         "options": {
           "command": "webpack-cli build",
           "args": [

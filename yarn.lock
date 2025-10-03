@@ -2576,6 +2576,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphql-codegen/fragment-matcher@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@graphql-codegen/fragment-matcher@npm:6.0.0"
+  dependencies:
+    "@graphql-codegen/plugin-helpers": "npm:^6.0.0"
+    tslib: "npm:~2.6.0"
+  peerDependencies:
+    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 10c0/1dd3aa3a91cd0be7475900d3009a81e7de018dc10ad03060437b7eb059d77c24cc206bed88901b518b6744a35c18b0bef1c6a0eb1455d4efb5836855c84dcef9
+  languageName: node
+  linkType: hard
+
 "@graphql-codegen/gql-tag-operations@npm:5.0.1":
   version: 5.0.1
   resolution: "@graphql-codegen/gql-tag-operations@npm:5.0.1"
@@ -5825,11 +5837,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@orchestrator/shared-gql@workspace:packages/shared-gql":
+"@orchestrator/shared2@workspace:packages/shared2":
   version: 0.0.0-use.local
-  resolution: "@orchestrator/shared-gql@workspace:packages/shared-gql"
-  dependencies:
-    tslib: "npm:^2.3.0"
+  resolution: "@orchestrator/shared2@workspace:packages/shared2"
   languageName: unknown
   linkType: soft
 
@@ -5838,6 +5848,10 @@ __metadata:
   resolution: "@orchestrator/shared@workspace:packages/shared"
   dependencies:
     "@apollo/client": "npm:^4.0.7"
+    "@graphql-codegen/cli": "npm:^6.0.0"
+    "@graphql-codegen/fragment-matcher": "npm:^6.0.0"
+    "@graphql-codegen/typescript": "npm:^5.0.1"
+    "@graphql-codegen/typescript-operations": "npm:^5.0.1"
   languageName: unknown
   linkType: soft
 
