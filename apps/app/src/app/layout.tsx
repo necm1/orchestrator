@@ -6,6 +6,7 @@ import {
   SidebarInset,
   ThemeProvider,
 } from '@orchestrator/ui';
+import { ApolloWrapper, getUsers } from '@orchestrator/shared';
 
 const fontSans = Inter({
   subsets: ['latin'],
@@ -17,7 +18,7 @@ const fontMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -28,20 +29,21 @@ export default function RootLayout({
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
-        {/* <div className="min-h-svh flex flex-col">{children}</div> */}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <SidebarProvider>
-            <AppSidebar />
-            <SidebarInset className="overflow-hidden px-4 md:px-6 lg:px-8">
-              {children}
-            </SidebarInset>
-          </SidebarProvider>
-        </ThemeProvider>
+        <ApolloWrapper>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <SidebarProvider>
+              <AppSidebar />
+              <SidebarInset className="overflow-hidden px-4 md:px-6 lg:px-8">
+                {children}
+              </SidebarInset>
+            </SidebarProvider>
+          </ThemeProvider>
+        </ApolloWrapper>
       </body>
     </html>
   );

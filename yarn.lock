@@ -53,6 +53,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@apollo/client-integration-nextjs@npm:^0.13.2":
+  version: 0.13.2
+  resolution: "@apollo/client-integration-nextjs@npm:0.13.2"
+  dependencies:
+    "@apollo/client-react-streaming": "npm:0.13.2"
+  peerDependencies:
+    "@apollo/client": ^4.0.0
+    next: ^15.2.3
+    react: ^19
+    rxjs: ^7.3.0
+  checksum: 10c0/ad689718364bc285444dac70d693c32778cea35a4e3e40edd313aa45576a5b62c41df25f73567a0383f2c1d04907410a797017ad613d06a32520e87397871a0d
+  languageName: node
+  linkType: hard
+
+"@apollo/client-react-streaming@npm:0.13.2":
+  version: 0.13.2
+  resolution: "@apollo/client-react-streaming@npm:0.13.2"
+  dependencies:
+    "@types/react-dom": "npm:^19.0.0"
+    "@wry/equality": "npm:^0.5.6"
+  peerDependencies:
+    "@apollo/client": ^4.0.0
+    graphql: ^16 || >=17.0.0-alpha.2
+    react: ^19
+    react-dom: ^19
+    rxjs: ^7.3.0
+  checksum: 10c0/1938a704a0e6a7712f9c499129e281e5966f37adc08bdae382bdb6e21b4d0556cd1d2e5cb0cac95d265304a87e59388798ab5ee0f85de29c4c2408a3c7cb6c53
+  languageName: node
+  linkType: hard
+
 "@apollo/client@npm:^4.0.7":
   version: 4.0.7
   resolution: "@apollo/client@npm:4.0.7"
@@ -5837,17 +5867,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@orchestrator/shared2@workspace:packages/shared2":
-  version: 0.0.0-use.local
-  resolution: "@orchestrator/shared2@workspace:packages/shared2"
-  languageName: unknown
-  linkType: soft
-
 "@orchestrator/shared@workspace:packages/shared":
   version: 0.0.0-use.local
   resolution: "@orchestrator/shared@workspace:packages/shared"
   dependencies:
     "@apollo/client": "npm:^4.0.7"
+    "@apollo/client-integration-nextjs": "npm:^0.13.2"
     "@graphql-codegen/cli": "npm:^6.0.0"
     "@graphql-codegen/fragment-matcher": "npm:^6.0.0"
     "@graphql-codegen/typescript": "npm:^5.0.1"
@@ -9247,6 +9272,15 @@ __metadata:
   dependencies:
     "@types/react": "npm:*"
   checksum: 10c0/bd480fc4a9c801fc6bbc7d26b37bb815fc382e76b5428511b1bdb2e8048f3dbd2ff9973bafc86b448e0593f9da4c02f7b39d47409e427daeed5a54f045de4596
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:^19.0.0":
+  version: 19.2.0
+  resolution: "@types/react-dom@npm:19.2.0"
+  peerDependencies:
+    "@types/react": ^19.2.0
+  checksum: 10c0/73ba326c8bc53e7bb597aa8e66ce4aabd79e501f744e1386278f0c63f1be6d78cca71a8269af3565206f296675116109a3ccbed4038409614fabf8405e54c6ef
   languageName: node
   linkType: hard
 

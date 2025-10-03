@@ -26,7 +26,8 @@
       "@orchestrator/app/*": ["./apps/app/src/*"],
       "@orchestrator/auth": ["packages/api-auth/src/index.ts"],
       "@orchestrator/flow-editor": ["packages/flow-editor/src/index.ts"],
-      "@orchestrator/ui": ["packages/ui/src/index.ts"]
+      "@orchestrator/ui": ["packages/ui/src/index.ts"],
+      "@orchestrator/shared": ["packages/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

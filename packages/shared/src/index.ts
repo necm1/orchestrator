@@ -1,1 +1,2 @@
-export { ApolloProvider } from './lib/apollo';
+export { ApolloWrapper } from './lib/apollo-wrapper';
+export { getUsers } from './actions/user';

@@ -50,6 +50,9 @@
       "path": "../../packages/flow-editor"
     },
     {
+      "path": "../../packages/shared"
+    },
+    {
       "path": "../../packages/ui"
     }
   ]
