@@ -15,6 +15,16 @@
     }
   },
   "dependencies": {
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/graphql": "^13.2.0",
+    "@nestjs/jwt": "^11.0.0",
+    "@nestjs/passport": "^11.0.5",
+    "argon2": "^0.44.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
     "tslib": "^2.3.0"
   },
   "nx": {
@@ -35,5 +45,10 @@
         }
       }
     }
+  },
+  "devDependencies": {
+    "@types/passport": "^0",
+    "@types/passport-jwt": "^4.0.1",
+    "@types/passport-local": "^1.0.38"
   }
 }

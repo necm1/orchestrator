@@ -1,23 +1,27 @@
 {
-    "extends": "../../tsconfig.base.json",
-    "compilerOptions": {
-        "baseUrl": ".",
-        "rootDir": "src",
-        "outDir": "dist",
-        "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
-        "emitDeclarationOnly": false,
-        "forceConsistentCasingInFileNames": true,
-        "noImplicitReturns": true,
-        "types": ["node"],
-        "target": "es2021",
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "strictNullChecks": true,
-        "noImplicitAny": true,
-        "strictBindCallApply": true,
-        "noFallthroughCasesInSwitch": true
-    },
-    "include": ["src/**/*.ts"],
-    "references": [],
-    "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
+    "emitDeclarationOnly": false,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "types": ["node"],
+    "target": "es2021",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src/**/*.ts"],
+  "references": [
+    {
+      "path": "../api-orm/tsconfig.lib.json"
+    }
+  ],
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }
