@@ -22,13 +22,11 @@ export type AuthCredentialInput = {
 };
 
 export type AuthResponse = {
-  __typename?: 'AuthResponse';
   access_token: Scalars['String']['output'];
   user?: Maybe<User>;
 };
 
 export type Mutation = {
-  __typename?: 'Mutation';
   signIn: AuthResponse;
 };
 
@@ -38,12 +36,10 @@ export type MutationSignInArgs = {
 };
 
 export type Query = {
-  __typename?: 'Query';
   users: Array<User>;
 };
 
 export type User = {
-  __typename?: 'User';
   createdAt: Scalars['DateTime']['output'];
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];

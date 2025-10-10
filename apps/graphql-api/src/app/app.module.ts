@@ -1,4 +1,8 @@
-import { Module } from '@nestjs/common';
+import {
+  ClassSerializerInterceptor,
+  Module,
+  ValidationPipe,
+} from '@nestjs/common';
 import { AppController } from './app.controller';
 import { LoggerModule } from 'nestjs-pino';
 import { ConfigModule } from '@nestjs/config';
@@ -12,6 +16,7 @@ import { redisStore } from 'cache-manager-redis-yet';
 import { RedisClientOptions } from 'redis';
 import { AuthModule } from './module/auth/auth.module';
 import * as argon2 from 'argon2';
+import { APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -49,6 +54,20 @@ import * as argon2 from 'argon2';
     AuthModule,
   ],
   controllers: [AppController],
+  providers: [
+    {
+      provide: APP_PIPE,
+      useValue: new ValidationPipe({
+        whitelist: true,
+        transform: true,
+        forbidNonWhitelisted: true,
+      }),
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: ClassSerializerInterceptor,
+    },
+  ],
 })
 export class AppModule {
   constructor() {

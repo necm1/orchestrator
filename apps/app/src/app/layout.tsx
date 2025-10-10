@@ -1,12 +1,7 @@
 import { Inter, Geist_Mono } from 'next/font/google';
 import '../styles/app.css';
-import {
-  SidebarProvider,
-  AppSidebar,
-  SidebarInset,
-  ThemeProvider,
-} from '@orchestrator/ui';
-import { ApolloWrapper, getUsers } from '@orchestrator/shared';
+import { ThemeProvider } from '@orchestrator/ui';
+import { ApolloWrapper } from '@orchestrator/shared';
 
 const fontSans = Inter({
   subsets: ['latin'],
@@ -36,12 +31,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <SidebarProvider>
-              <AppSidebar />
-              <SidebarInset className="overflow-hidden px-4 md:px-6 lg:px-8">
-                {children}
-              </SidebarInset>
-            </SidebarProvider>
+            {children}
           </ThemeProvider>
         </ApolloWrapper>
       </body>

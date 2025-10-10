@@ -12,9 +12,9 @@
   },
   "aliases": {
     "components": "@orchestrator/ui/components",
-    "utils": "./lib/utils",
-    "ui": "@orchestrator/ui/*",
-    "lib": "./lib",
+    "utils": "@orchestrator/ui/utils",
+    "ui": "@orchestrator/ui",
+    "lib": "@orchestrator/ui/lib",
     "hooks": "@orchestrator/ui/hooks"
   },
   "iconLibrary": "lucide"

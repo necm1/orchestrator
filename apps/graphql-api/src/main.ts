@@ -5,37 +5,40 @@ import { AppModule } from './app/app.module';
 import { Logger, LoggerErrorInterceptor } from 'nestjs-pino';
 import * as bodyParser from 'body-parser';
 import { expressMiddleware } from '@as-integrations/express5';
+import { generate } from './zod-gen';
 
 async function bootstrap() {
-    const app = await NestFactory.create<NestExpressApplication>(AppModule, {
-        bufferLogs: true,
-    });
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+    bufferLogs: true,
+  });
 
-    const globalPrefix = 'api';
+  const globalPrefix = 'api';
 
-    app.setGlobalPrefix(globalPrefix);
+  app.setGlobalPrefix(globalPrefix);
 
-    app.useLogger(app.get(Logger));
-    app.useGlobalInterceptors(new LoggerErrorInterceptor());
+  app.useLogger(app.get(Logger));
+  app.useGlobalInterceptors(new LoggerErrorInterceptor());
 
-    app.enableCors();
-    app.set('trust proxy', 1);
+  app.enableCors();
+  app.set('trust proxy', 1);
 
-    app.use(
-        bodyParser.json({
-            limit: 1e8 + 'mb',
-            verify: (req: any, res, buf) => (req.rawBody = buf.toString()),
-        })
-    );
-    app.use(bodyParser.urlencoded({ limit: 1e8 + 'mb', extended: true }));
-    // app.use(expressMiddleware());
+  app.use(
+    bodyParser.json({
+      limit: 1e8 + 'mb',
+      verify: (req: any, res, buf) => (req.rawBody = buf.toString()),
+    })
+  );
+  app.use(bodyParser.urlencoded({ limit: 1e8 + 'mb', extended: true }));
+  // app.use(expressMiddleware());
 
-    const port = 3002;
-    await app.listen(port);
+  const port = 3002;
+  await app.listen(port);
 
-    NestLogger.log(
-        `GraphQL API is running on: http://localhost:${port}/${globalPrefix}`
-    );
+  generate();
+
+  NestLogger.log(
+    `GraphQL API is running on: http://localhost:${port}/${globalPrefix}`
+  );
 }
 
 bootstrap();
